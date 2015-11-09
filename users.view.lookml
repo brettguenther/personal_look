@@ -9,6 +9,11 @@
   - dimension: age
     type: int
     sql: ${TABLE}.age
+    
+  - dimension: age_tier
+    type: tier
+    sql: ${age}
+    tiers: [20,35,50,65,80]
 
   - dimension: city
     sql: ${TABLE}.city
@@ -32,6 +37,21 @@
 
   - dimension: last_name
     sql: ${TABLE}.last_name
+    
+  - dimension: full_name
+    sql: CONCAT(${first_name},' ',${last_name})
+    html: |
+      <p>{{ rendered_value }}</p>
+      
+  - dimension: full_name_upper
+    sql: CONCAT(${first_name},' ',${last_name})
+    html: |
+      <p>{{ rendered_value | upcase }}</p>
+      
+  - dimension: full_name_test_with_escape
+    sql: CONCAT(${first_name},' \, ',${last_name})
+    html: |
+      <p>{{ value | escape }}</p>
 
   - dimension: state
     sql: ${TABLE}.state

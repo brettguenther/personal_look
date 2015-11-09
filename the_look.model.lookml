@@ -12,6 +12,7 @@
 
 
 - explore: inventory_items
+  access_filter_fields: [products.department]
   joins:
     - join: products
       type: left_outer
@@ -41,13 +42,24 @@
       sql_on: ${orders.user_id} = ${users.id}
       relationship: many_to_one
 
-
 - explore: orders
   joins:
     - join: users
       type: left_outer
       sql_on: ${orders.user_id} = ${users.id}
       relationship: many_to_one
+      
+#- explore: orders_extended
+#  extends: orders
+#  joins:
+#    - join: users
+#    - from: users_extended
+      
+
+- explore: users_extended_test
+  extends: users
+  view: users
+  from: users_extended
 
 
 - explore: products
@@ -60,7 +72,10 @@
       type: left_outer
       sql_on: ${user_data.user_id} = ${users.id}
       relationship: many_to_one
-
-
+      
 - explore: users
-
+  joins:
+    - join: orders
+      type: left_outer
+      sql_on: ${users.id} = ${orders.user_id}
+      relationship: one_to_many
