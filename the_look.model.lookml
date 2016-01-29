@@ -43,18 +43,18 @@
       relationship: many_to_one
 
 - explore: orders
+  view: orders
   joins:
     - join: users
       type: left_outer
       sql_on: ${orders.user_id} = ${users.id}
       relationship: many_to_one
-      
-#- explore: orders_extended
-#  extends: orders
-#  joins:
-#    - join: users
-#    - from: users_extended
-      
+
+- explore: orders_extended
+  extends: orders
+  joins:
+    - join: users
+      from: users_extended
 
 - explore: users_extended_test
   extends: users

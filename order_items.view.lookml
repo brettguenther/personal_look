@@ -25,6 +25,11 @@
     type: number
     sql: ${TABLE}.sale_price
 
+  - dimension: pct_of_order_price
+    type: number
+    sql: |
+      (SELECT sale_price/sum(x) over (partition by order_id) as part FROM order_items)
+
   - measure: count
     type: count
     drill_fields: [id, inventory_items.id, orders.id]

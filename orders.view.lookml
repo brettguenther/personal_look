@@ -26,8 +26,16 @@
       WHERE o.user_id = ${TABLE}.user_id
         AND o.created_at < ${TABLE}.created_at
       )
+      
+  - dimension: first_purchase
+    type: yesno
+    sql: ${user_order_count} > 1
 
   - measure: count
     type: count
     drill_fields: [id, users.last_name, users.first_name, users.id, order_items.count]
+    
+  - measure: sum_users
+    type: sum
+    sql: ${user_id}
 
