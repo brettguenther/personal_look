@@ -1,4 +1,5 @@
 - view: inventory_items
+  sql_table_name: inventory_items
   fields:
 
   - dimension: id
@@ -28,4 +29,11 @@
   - measure: count
     type: count
     drill_fields: [id, products.item_name, products.id, order_items.count]
+    
+  sets:
+    base_set:
+      - id
+      - cost
+      - product_id
+      - sold_date
 

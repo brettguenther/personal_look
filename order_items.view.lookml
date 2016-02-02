@@ -33,4 +33,16 @@
   - measure: count
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
-
+    
+  sets:
+    base_set:
+      - id
+      - order_id
+      - returned_date
+      - sale_price
+    team_1_set:
+      - base_set*
+      - pct_of_order_price
+    team_2_set:
+      - team_1_set*
+      - inventory_item_id
