@@ -1,3 +1,4 @@
+- explore: lat_long_test
 - view: lat_long_test
 
 # # Specify the table name if it's different from the view name:
@@ -14,9 +15,10 @@
 
   fields:
 # #     Define your dimensions and measures here, like this:
-#     - dimension: profit
-#       type: number
-#       sql: ${TABLE}.profit
+    - dimension: lat
+      type: location
+      sql_latitude: ${TABLE}.lat
+      sql_longitude: ${TABLE}.lon
 #
 #     - measure: total_profit
 #       type: sum
