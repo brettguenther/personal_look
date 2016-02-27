@@ -5,7 +5,7 @@
 
 - explore: orders_base_joins
   extends: orders_base
-  
+
 # - explore: events
 #   joins:
 #     - join: users
