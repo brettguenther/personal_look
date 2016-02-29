@@ -1,7 +1,7 @@
 - connection: thelook
 
 - include: "*.view.lookml"       # include all the views
-- include: "*.dashboard.lookml"  # include all the dashboards
+- include: "team_1.*.dashboard.lookml"  # include all the dashboards
 
 - explore: orders_team_1
   extends: orders_base

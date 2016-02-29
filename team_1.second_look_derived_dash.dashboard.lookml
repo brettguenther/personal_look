@@ -1,5 +1,5 @@
-- dashboard: first_look_derived_dash
-  title: First Look Derived Dash
+- dashboard: second_look_derived_dash
+  title: Team 1 Look Derived Dash
   layout: tile
   tile_size: 100
   show_applied_filters: true
