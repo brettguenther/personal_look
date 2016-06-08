@@ -9,7 +9,7 @@
     type: number_filter
     explore: orders_team_1
     field: inventory_items.cost
-    default_value: '>50'
+    default_value: '>20'
 
   elements:
 
