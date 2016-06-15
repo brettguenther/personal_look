@@ -1,4 +1,4 @@
-- explore: orders_base
+- explore: orders_base_outside
   extension: required
   view: orders
   joins:
