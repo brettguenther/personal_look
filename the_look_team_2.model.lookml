@@ -19,14 +19,3 @@
 
     - join: products
       foreign_key: inventory_items.product_id
-    
-- view: inventory_items_with_extensions
-  extends: inventory_items
-  fields:
-  - dimension: cost_tiers
-    type: tier
-    style: integer
-    tiers: [10,20,30,50,70]
-    sql: ${cost}
-  sets:
-    detail: [base_set*, cost_tiers]
