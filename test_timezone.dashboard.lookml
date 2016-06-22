@@ -5,18 +5,26 @@
 
   elements:
 
-  - name: add_a_unique_name_1465406532639
-    title: Untitled Table
+  - name: no_query_timezone
+    title: No TZ Param
     type: table
-    model: the_look_team_2
-    explore: orders_team_2
-    dimensions: [orders.created_date, orders.created_time]
+    model: the_look_team_1
+    explore: orders_team_1
+    dimensions: [orders.created_time]
     measures: [orders.count]
-    filters:
-      orders.created_date: 2016/06/07
-    sorts: [orders.created_date desc]
+    sorts: [orders.created_time desc]
     limit: 500
-    column_limit: 50
     #query_timezone: America/Los_Angeles
+    
+  - name: query_timezone
+    title: TZ Param
+    type: table
+    model: the_look_team_1
+    explore: orders_team_1
+    dimensions: [orders.created_time]
+    measures: [orders.count]
+    sorts: [orders.created_time desc]
+    limit: 500
+    query_timezone: America/Los_Angeles
 
 
