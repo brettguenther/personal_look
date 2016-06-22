@@ -17,7 +17,7 @@
     #query_timezone: America/Los_Angeles
     
   - name: query_timezone
-    title: TZ Param
+    title: TZ Param LA
     type: table
     model: the_look_team_1
     explore: orders_team_1
