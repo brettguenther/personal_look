@@ -5,12 +5,12 @@
 - explore: orders_base_joins
   extends: orders_base
 
-# - explore: events
-#   joins:
-#     - join: users
-#       type: left_outer
-#       sql_on: ${events.user_id} = ${users.id}
-#       relationship: many_to_one  
+- explore: events
+  joins:
+    - join: users
+      type: left_outer
+      sql_on: ${events.user_id} = ${users.id}
+      relationship: many_to_one  
 #   
 # - explore: inventory_items
 #   access_filter_fields: [products.department]
