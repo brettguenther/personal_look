@@ -19,7 +19,7 @@
       from: inventory_items_with_extensions  # example of exposing more dimensions through an extended view
       foreign_key: order_items.inventory_item_id
 
-    - join: products
+    - join: products # add in a new join relationship that is specific to this team
       foreign_key: inventory_items.product_id
       
 - explore: order_items_base_joins
