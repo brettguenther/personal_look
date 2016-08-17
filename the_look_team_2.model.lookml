@@ -11,13 +11,19 @@
   extends: orders_base
   joins:
     - join: order_items
-      fields: [team_2_set*]
+      fields: [team_2_set*] # example of field set exposure manipulation for team 2
       sql_on: ${order_items.order_id} = ${orders.id}
       relationship: one_to_many
       
     - join: inventory_items
-      from: inventory_items_with_extensions
+      from: inventory_items_with_extensions  # example of exposing more dimensions through an extended view
       foreign_key: order_items.inventory_item_id
 
     - join: products
       foreign_key: inventory_items.product_id
+      
+- explore: order_items_base_joins
+  extends: order_items_base
+  
+- explore: events_base_joins
+  extends: events_base
