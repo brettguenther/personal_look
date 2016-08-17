@@ -1,11 +1,9 @@
 - connection: thelook
 
 - include: "team_2.*.view.lookml"       # include all views in this project
-- include: "base_joins.view.lookml"
-- include: "base.*.view.lookml"
+- include: "base_joins.view.lookml" # include core explores
+- include: "base.*.view.lookml" # include base view files
 - include: "team_2.*.dashboard.lookml"  # include all dashboards in this project
-# # Select the views that should be a part of this model,
-# # and define the joins that connect them together.
 
 - explore: orders_team_2
   extends: orders_base
