@@ -24,6 +24,20 @@
   - dimension: sale_price
     type: number
     sql: ${TABLE}.sale_price
+    
+  - measure: running_sale_total_row
+    type: running_total
+    sql: ${total_sale_price}
+    direction: row       # Calculation across the row (default)
+
+  - measure: running_sale_total_column
+    type: running_total
+    sql: ${total_sale_price}
+    direction: column
+    
+  - measure: total_sale_price
+    type: sum
+    sql: ${sale_price}
 
   - dimension: pct_of_order_price
     type: number
