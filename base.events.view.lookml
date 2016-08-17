@@ -3,7 +3,7 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension_group: created
@@ -12,11 +12,11 @@
     sql: ${TABLE}.created_at
 
   - dimension: type_id
-    type: int
+    type: number
     sql: ${TABLE}.type_id
 
   - dimension: user_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.user_id
 
@@ -26,4 +26,3 @@
   - measure: count
     type: count
     drill_fields: [id, users.last_name, users.first_name, users.id]
-

@@ -3,7 +3,7 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension: brand
@@ -19,7 +19,7 @@
     sql: ${TABLE}.item_name
 
   - dimension: rank
-    type: int
+    type: number
     sql: ${TABLE}.rank
 
   - dimension: retail_price
@@ -32,4 +32,3 @@
   - measure: count
     type: count
     drill_fields: [id, item_name, inventory_items.count]
-

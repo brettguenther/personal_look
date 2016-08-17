@@ -3,11 +3,11 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension: age
-    type: int
+    type: number
     sql: ${TABLE}.age
     
   - dimension: age_tier
@@ -57,7 +57,7 @@
     sql: ${TABLE}.state
 
   - dimension: zip
-    type: int
+    type: number
     sql: ${TABLE}.zip
 
   - measure: count
@@ -74,4 +74,3 @@
     - events.count
     - orders.count
     - user_data.count
-

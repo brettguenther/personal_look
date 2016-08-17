@@ -3,7 +3,7 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension_group: created
@@ -15,12 +15,12 @@
     sql: ${TABLE}.status
 
   - dimension: user_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.user_id
     
   - dimension: user_order_count
-    type: int
+    type: number
     sql: |
       (SELECT count(*) from orders o
       WHERE o.user_id = ${TABLE}.user_id
@@ -38,4 +38,3 @@
   - measure: sum_users
     type: sum
     sql: ${user_id}
-
