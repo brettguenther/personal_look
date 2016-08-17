@@ -13,6 +13,7 @@
       relationship: one_to_many
       
     - join: inventory_items
+      fields: []
       foreign_key: order_items.inventory_item_id
       
 # - explore: events

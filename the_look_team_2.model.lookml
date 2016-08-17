@@ -20,8 +20,8 @@
     - join: products # add in a new join relationship that is specific to this team
       foreign_key: inventory_items.product_id
       
-- explore: order_items_base_joins
+- explore: order_items_team_2
   extends: order_items_base
   
-- explore: events_base_joins
+- explore: events_base_team_2
   extends: events_base

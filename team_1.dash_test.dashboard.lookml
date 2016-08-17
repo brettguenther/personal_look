@@ -19,8 +19,6 @@
     model: the_look_team_1
     explore: orders_team_1
     measures: [orders.count]
-    filters:
-      inventory_items.cost: '>50'
     sorts: [orders.count desc]
     limit: 500
     query_timezone: America/Los_Angeles
