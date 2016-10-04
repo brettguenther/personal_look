@@ -2,6 +2,7 @@
 
 - include: "*.view.lookml"       # include all the views
 - include: "team_1.*.dashboard.lookml"  # include all the dashboards
+- include: "test_timezone.dashboard.lookml"
 
 - explore: orders_team_1
   extends: orders_base
@@ -12,6 +13,7 @@
       relationship: one_to_many
       
     - join: inventory_items
+      fields: []
       foreign_key: order_items.inventory_item_id
       
 # - explore: events
