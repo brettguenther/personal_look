@@ -15,7 +15,7 @@
     sorts: [orders.created_time desc]
     limit: 500
     #query_timezone: America/Los_Angeles
-    
+
   - name: query_timezone
     title: TZ Param LA
     type: table
@@ -37,5 +37,3 @@
     sorts: [orders.created_time desc]
     limit: 500
     #query_timezone: America/New_York
-
-
