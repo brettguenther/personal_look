@@ -13,6 +13,9 @@
 
   - dimension: status
     sql: ${TABLE}.status
+    actions: 
+    - label: Label as bug
+      url: https://young-falls-48413.herokuapp.com/github_issue?label=bug&issue_number={{ value }}
 
   - dimension: user_id
     type: number
