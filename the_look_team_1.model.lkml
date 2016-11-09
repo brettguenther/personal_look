@@ -1,27 +1,27 @@
-connection: "thelook"
+connection: "local_db"
 
-# include all the views
-include: "*.view"
+# # include all the views
+# include: "*.view"
 
-# include all the dashboards
-include: "team_1.*.dashboard"
+# # include all the dashboards
+# include: "team_1.*.dashboard"
 
-include: "test_timezone.dashboard"
+# include: "test_timezone.dashboard"
 
-explore: orders_team_1 {
-  extends: [orders_base]
+# explore: orders_team_1 {
+#   extends: [orders_base]
 
-  join: order_items {
-    fields: [team_1_set*]
-    sql_on: ${order_items.order_id} = ${orders.id} ;;
-    relationship: one_to_many
-  }
+#   join: order_items {
+#     fields: [team_1_set*]
+#     sql_on: ${order_items.order_id} = ${orders.id} ;;
+#     relationship: one_to_many
+#   }
 
-  join: inventory_items {
-    fields: []
-    foreign_key: order_items.inventory_item_id
-  }
-}
+#   join: inventory_items {
+#     fields: []
+#     foreign_key: order_items.inventory_item_id
+#   }
+# }
 
 # - explore: events
 #   joins:
