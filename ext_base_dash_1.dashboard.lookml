@@ -1,6 +1,7 @@
 - dashboard: ext_base_dash_1
   title: Dash Test
   layout: tile
+  show_applied_filters: false
   tile_size: 100
 
   filters:
