@@ -1,10 +1,17 @@
 - dashboard: ext_base_dash_2
   title: Team 2 Derived Dash
+  show_applied_filters: false
   layout: tile
   tile_size: 100
   # show_applied_filters: true
   # auto_run: true
-#  filters:
+  filters:
+  - name: test_2
+    title: 'Filter Test 2'
+    type: number_filter
+    explore: orders_team_1
+    field: inventory_items.cost
+    default_value: '>20'
 
   elements:
 
