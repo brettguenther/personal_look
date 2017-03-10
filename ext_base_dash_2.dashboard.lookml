@@ -1,4 +1,5 @@
 - dashboard: ext_base_dash_2
+  extension: required
   title: Team 2 Derived Dash
   show_applied_filters: false
   layout: tile

@@ -1,4 +1,5 @@
 - dashboard: ext_base_dash_1
+  extension: required
   title: Dash Test
   layout: tile
   show_applied_filters: false
