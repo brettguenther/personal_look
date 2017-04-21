@@ -22,7 +22,7 @@ view: products {
   }
 
   dimension: rank {
-    type: number
+    type: number value_format_name: id
     sql: ${TABLE}.rank ;;
   }
 
@@ -32,6 +32,7 @@ view: products {
   }
 
   dimension: sku {
+    type: number value_format_name: id
     sql: ${TABLE}.sku ;;
   }
 

@@ -13,6 +13,12 @@ explore: orders_base {
   join: inventory_items {
     foreign_key: order_items.inventory_item_id
   }
+
+  join: products {
+    type: left_outer
+    sql_on: ${inventory_items.product_id} = ${products.id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: events_base {

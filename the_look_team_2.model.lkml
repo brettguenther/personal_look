@@ -30,7 +30,7 @@ explore: orders_team_2 {
 
   # add in a new join relationship that is specific to this team
   join: products {
-    foreign_key: inventory_items.product_id
+    sql_on: ${products.id} = ${inventory_items.product_id} ;;
   }
 }
 

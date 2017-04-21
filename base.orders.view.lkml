@@ -1,4 +1,15 @@
 view: orders {
+sql_table_name:  {{ orders.schema_grab._value }}.orders ;;
+    filter: schema {}
+
+    dimension: schema_grab {
+    sql: |
+      CASE
+        WHEN {% parameter schema %} = '' THEN public
+        ELSE cast({% parameter schema %} as string)
+      END;;
+    }
+
   dimension: id {
     primary_key: yes
     type: number
@@ -11,13 +22,15 @@ view: orders {
     sql: ${TABLE}.created_at ;;
   }
 
+
+
   dimension: status {
     sql: ${TABLE}.status ;;
     #X# Invalid LookML inside "dimension": {"actions":[{"label":"Label as bug","url":"https://young-falls-48413.herokuapp.com/github_issue?label=bug&issue_number={{ value }}"}]}
   }
 
   dimension: user_id {
-    type: number
+    type: number value_format_name: id
     # hidden: true
     sql: ${TABLE}.user_id ;;
   }

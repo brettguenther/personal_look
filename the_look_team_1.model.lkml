@@ -11,6 +11,10 @@ include: "ext_*.dashboard"
 # include: "test_timezone.dashboard"
 
 explore: orders_team_1 {
+  access_filter: {
+    field: order_items.id
+    user_attribute: access_level
+  }
   view_name: orders
   extends: [orders_base]
 
