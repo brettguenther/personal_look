@@ -10,6 +10,13 @@ include: "ext_*.dashboard"
 
 # include: "test_timezone.dashboard"
 
+explore: lat_long_test {}
+
+map_layer: my_layer {
+  file: "map.topojson"
+  property_key: "area_id"
+}
+
 explore: orders_team_1 {
   access_filter: {
     field: order_items.id
@@ -27,6 +34,12 @@ explore: orders_team_1 {
   join: inventory_items {
     fields: []
     foreign_key: order_items.inventory_item_id
+    relationship: many_to_one
+  }
+
+  join: users {
+    sql_on: ${orders.user_id} = ${users.id} ;;
+    relationship: many_to_one
   }
 }
 
