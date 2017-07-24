@@ -4,7 +4,6 @@ explore: hr_looker_training_set_ {
 
 view: hr_looker_training_set_ {
   derived_table: {
-    distribution_style: all
     sql: select
       1 as employee_number,
       'Joan of Arc' as name,
@@ -83,8 +82,10 @@ view: hr_looker_training_set_ {
       2012 as hired_year,
       'M' as gender
        ;;
-    sortkeys: ["employee_number"]
+    # sortkeys: ["employee_number"]
     persist_for: "2000 hours"
+    indexes: ["employee_number"]
+    # distribution_style: all
   }
 
   ##  DIMENSIONS  ##
