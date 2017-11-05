@@ -4,7 +4,7 @@ connection: "thelook"
 include: "team_2.*.view"
 
 # include core explores
-include: "base_joins.view"
+include: "base_joins.base"
 
 # include base view files
 include: "base.*.view"
