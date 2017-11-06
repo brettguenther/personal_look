@@ -1,61 +1,32 @@
 view: orders {
-sql_table_name:  {{ orders.schema_grab._value }}.orders ;;
-    filter: schema {}
-
-    dimension: schema_grab {
-    sql: |
-      CASE
-        WHEN {% parameter schema %} = '' THEN public
-        ELSE cast({% parameter schema %} as string)
-      END;;
-    }
+  sql_table_name: demo_db.orders ;;
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
 
   dimension: id {
-    primary_key: yes
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 
   dimension_group: created {
     type: time
-    timeframes: [time, date, week, month]
+    datatype: datetime
     sql: ${TABLE}.created_at ;;
   }
 
-
-
-  dimension: status {
-    sql: ${TABLE}.status ;;
-    #X# Invalid LookML inside "dimension": {"actions":[{"label":"Label as bug","url":"https://young-falls-48413.herokuapp.com/github_issue?label=bug&issue_number={{ value }}"}]}
-  }
-
   dimension: user_id {
-    type: number value_format_name: id
-    # hidden: true
+    type: string
     sql: ${TABLE}.user_id ;;
   }
 
-  dimension: user_order_count {
-    type: number
-    sql: (SELECT count(*) from orders o
-      WHERE o.user_id = ${TABLE}.user_id
-        AND o.created_at < ${TABLE}.created_at
-      )
-       ;;
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
   }
 
-  dimension: first_purchase {
-    type: yesno
-    sql: ${user_order_count} > 1 ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [id, users.last_name, users.first_name, users.id, order_items.count]
-  }
-
-  measure: sum_users {
-    type: sum
-    sql: ${user_id} ;;
+  set: detail {
+    fields: [id, created_time, user_id, status]
   }
 }
