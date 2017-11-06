@@ -2,9 +2,8 @@ connection: "thelook"
 
 
 # include all the views
-include: "base_joins.view"
-
 include: "base.*.view"
+include: "base_joins.base"
 
 #extend right of the base and pull in all relationships and exposed fields
 explore: orders_base_joins {

@@ -1,6 +1,4 @@
-include: "base.order_items.view.lkml"
-include: "base.events.view.lkml"
-include: "base.orders.view.lkml"
+include: "base.*.view.lkml"
 explore: orders_base {
   extension: required
   view_name: orders

@@ -3,19 +3,11 @@ connection: "thelook"
 # # include all the views
 include: "*.view"
 
+include: "base_joins.base"
+
 # # include all the dashboards
 include: "team_1.*.dashboard"
-
 include: "ext_*.dashboard"
-
-# include: "test_timezone.dashboard"
-
-explore: lat_long_test {}
-
-map_layer: my_layer {
-  file: "map.topojson"
-  property_key: "area_id"
-}
 
 explore: orders_team_1 {
   access_filter: {
