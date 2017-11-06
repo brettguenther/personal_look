@@ -1,5 +1,5 @@
 include: "base.orders.view"
-view: team_1_orders {
+view: orders_team_1 {
   extends: [orders]
   measure: cancelled_orders {
     type: count

@@ -15,7 +15,7 @@ explore: orders_team_1 {
     user_attribute: access_level
   }
   view_name: orders
-  from: orders
+  from: orders_team_1
   extends: [orders_base]
 
   join: order_items {
